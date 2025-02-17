@@ -3,8 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-secondary {
+    background-color: #FEE3CF;
+  }
+  .text-primary {
+    color: #0361DE;
+  }
+}
+
+
+
 body {
-  @apply bg-primary;
+  background-color: #0361DE;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

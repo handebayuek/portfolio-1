@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+
   theme: {
     extend: {
       fontFamily: {
@@ -13,12 +14,8 @@ const config: Config = {
       },
     },
   },
-  safelist: [
-    "bg-primary",
-    "text-primary",
-    "text-secondary",
-    "font-adventPro"
-  ],
+
+
   plugins: [],
 };
 
