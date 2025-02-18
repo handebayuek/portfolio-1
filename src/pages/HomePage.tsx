@@ -10,21 +10,36 @@ function HomePage() {
             </header>
             <main className="text-secondary">
                 
-                <section className=" mt-10">
-                    <h2 className="text-3xl font-bold text-center">Projects</h2>
+                <section className=" mt-10 p-5">
+                    <h2 className="text-4xl font-bold text-center">Projects</h2>
                     <div className="flex items-center justify-center flex-col gap-6 mt-6">
                         {projects.map((project) => (
                             <div key={project.id} className="border p-4 rounded-lg shadow-md">
-                                <h3 className="text-xl font-semibold">{project.title}</h3>
-                                <p className="text-sm text-gray-600">{project.description}</p>
+                                <h3 className="text-xl text-primary bg-secondary w-fit rounded-sm p-1 font-semibold mb-4">{project.title}</h3>
+                                <p className="text-sm text-secondary">{project.description}</p>
                                 
                                 <div className="flex flex-wrap gap-2 mt-2">
                                     {project.techStack.map((tech) => (
-                                        <span key={tech} className="bg-blue-200 px-2 py-1 text-xs rounded">
+                                        <span key={tech} className="bg-secondary text-primary font-bold px-2 py-1 text-xs rounded">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
+                                <div className="flex gap-3 mt-3">
+                                    {project.links.map((link) => (
+                                        <a 
+                                            key={link.url} 
+                                            href={link.url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="flex items-center w-7 h-7 fill-primary"
+                                        >
+                                            {link.icon} 
+                                            
+                                        </a>
+                                    ))}
+                                </div>
+                                
                             </div>
                         ))}
                     </div>
