@@ -1,4 +1,4 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss"; 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +9,10 @@
   }
   .text-primary {
     color: #0361DE;
+  }
+  
+  .text-secondary {
+    color: #FEE3CF;
   }
 }
 
