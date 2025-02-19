@@ -1,5 +1,5 @@
 import { projects } from "../components/Projects";
-import Contact from "../components/Contact/Contact";
+import ContactForm from "../components/ContactForm";
 import HomePages from "../components/HomePages";
 
 function HomePage() {
@@ -10,8 +10,8 @@ function HomePage() {
             </header>
             <main className="text-secondary">
                 
-                <section className=" mt-10 p-5">
-                    <h2 className="text-4xl font-bold text-center">Projects</h2>
+                <section className=" mt-3 p-4">
+                    <h2 className="text-4xl font-bold text-center uppercase">Projects</h2>
                     <div className="flex items-center justify-center flex-col gap-6 mt-6">
                         {projects.map((project) => (
                             <div key={project.id} className="border p-4 rounded-lg shadow-md">
@@ -45,7 +45,7 @@ function HomePage() {
                     </div>
                 </section>
 
-                <Contact />
+                <ContactForm />
             </main>
         </div>
     );
