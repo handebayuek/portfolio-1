@@ -2,6 +2,7 @@ import { projects } from "../components/Projects";
 import ContactForm from "../components/ContactForm";
 import HomePages from "../components/HomePages";
 
+
 function HomePage() {
     return (
         <div className="flex justify-center items-center mx-auto flex-col">
@@ -46,6 +47,7 @@ function HomePage() {
                 </section>
 
                 <ContactForm />
+               
             </main>
         </div>
     );

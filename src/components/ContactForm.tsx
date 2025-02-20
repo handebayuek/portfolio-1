@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import PolygonLogo from "../assets/figma_svg/portfolio-1/PolygonLogo.svg?react";
@@ -47,65 +48,77 @@ const ContactForm = () => {
   };
 
   return (
-    <div className=" mt-3 p-4">
-      <h1 className="text-4xl font-bold text-center uppercase">Contact Me</h1>
-      <div className="flex flex-wrap gap-6">
-      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8 p-5 absolute ">
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-3 lg:gap-5 w-full md:w-1/2 justify-start items-start"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-1/2 p-2 border bg-secondary rounded text-primary font-extralight "
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="your email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-1/2 p-2 border bg-secondary rounded text-primary font-extralight "
-          />
-          <textarea
-            name="message"
-            placeholder="Let's communicate for cooperation and development"
-            onChange={handleChange}
-            className="w-2/3 p-2 lg:w-2/3 h-[150px] border bg-secondary rounded text-primary resize-none font-extralight"
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 border text-secondary rounded transition mt-4 p-2"
-          >
-            SEND
-          </button>
-        </form>
-      </div>
-      <div className="w-full md:w-1/2 flex flex-col items-center gap-6 relative">
-        <div className="absolute flex justify-center w-full h-full left-36 top-48 ">
-          <WhiteCheck className="w-20 absolute top-0  " />
-          <PolygonLogo className="w-50 top-10 " />
-        </div>
-        <div className="relative flex flex-col items-center justify-center left-36 top-76 gap-2">
-          <h3 className="text-lg font-semibold">Find me on</h3>
-          <div className="flex gap-4 mt-2">
-            <a href="https://github.com/handebayuek" target="_blank" rel="noopener noreferrer">
-              <GithubLogo className="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/hande-bayuk" target="_blank" rel="noopener noreferrer">
-              <LinkedInLogo className="w-6 h-6" />
-            </a>
-            <a href="https://www.figma.com/@handee" target="_blank" rel="noopener noreferrer">
-              {" "}
-              <FigmaLogo className="w-6 h-6" />
-            </a>
+    <div className="flex flex-col items-center justify-center ">
+      <ToastContainer/>
+      <h1 className="text-4xl font-bold text-center uppercase mt-9">Contact Me</h1>
+      <div className="grid grid-cols-2 gap-10 items-center mt-7">
+        <section className="w-full max-w-[500px]">
+          <form onSubmit={handleSubmit} className="flex justify-start flex-col items-start ml-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="h-[40px] w-[90%] p-2 border bg-secondary rounded text-primary font-extralight "
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="your email"
+              value={formData.email}
+              onChange={handleChange}
+              className="h-[40px] w-[90%] p-2 border bg-secondary rounded text-primary font-extralight "
+            />
+            <textarea
+              name="message"
+              placeholder="Let's communicate for cooperation and development"
+              onChange={handleChange}
+              className="h-[100px] w-[250px] min-w-full p-2 border bg-secondary rounded text-primary resize-none font-extralight"
+            />
+            <button
+            
+              type="submit"
+              className="px-4 py-2 border text-secondary rounded transition mt-4 mb-3 p-2"
+            >
+              SEND
+            </button>
+          </form>
+        </section>
+        <section className="flex flex-col justify-center items-center relative mt-8">
+          <div className="relative flex justify-center items-center">
+            <WhiteCheck className=" mt-[-170px] w-20 absolute" />
+            <PolygonLogo className="w-50 mt-[-20px] relative " />
           </div>
-        </div>
-      </div>
+
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center mt-4">
+            <h3 className="text-lg text-center font-semibold">Find me on</h3>
+            <div className="flex flex-row gap-3 ">
+              <a
+                href="https://github.com/handebayuek"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubLogo className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hande-bayuk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInLogo className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.figma.com/@handee"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                <FigmaLogo className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
