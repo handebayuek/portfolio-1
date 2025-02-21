@@ -1,6 +1,7 @@
 import { projects } from "../components/Projects";
 import ContactForm from "../components/ContactForm";
 import HomePages from "../components/HomePages";
+import Footer from "../components/Footer";
 
 
 function HomePage() {
@@ -13,9 +14,9 @@ function HomePage() {
                 
                 <section className=" mt-3 p-4">
                     <h2 className="text-4xl font-bold text-center uppercase">Projects</h2>
-                    <div className="flex items-center justify-center flex-col gap-6 mt-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-5 mt-5">
                         {projects.map((project) => (
-                            <div key={project.id} className="border p-4 rounded-lg shadow-md">
+                            <div key={project.id} className="border p-4 rounded-lg shadow-md mt-5 max-h-full">
                                 <h3 className="text-xl text-primary bg-secondary w-fit rounded-sm p-1 font-semibold mb-4">{project.title}</h3>
                                 <p className="text-sm text-secondary">{project.description}</p>
                                 
@@ -26,7 +27,7 @@ function HomePage() {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex gap-3 mt-3">
+                                <div className="flex gap-3 mt-6">
                                     {project.links.map((link) => (
                                         <a 
                                             key={link.url} 
@@ -47,6 +48,7 @@ function HomePage() {
                 </section>
 
                 <ContactForm />
+                <Footer/>
                
             </main>
         </div>

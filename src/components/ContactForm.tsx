@@ -1,11 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import PolygonLogo from "../assets/figma_svg/portfolio-1/PolygonLogo.svg?react";
-import WhiteCheck from "../assets/figma_svg/portfolio-1/portfolio1-whitecheck.svg?react";
-import LinkedInLogo from "../assets/figma_svg/social_media/linkedInLogo.svg?react";
-import GithubLogo from "../assets/figma_svg/social_media/GitHubLogo.svg?react";
-import FigmaLogo from "../assets/figma_svg/social_media/figmaLogo.svg?react";
+
 
 interface FormData {
   name: string;
@@ -51,16 +47,16 @@ const ContactForm = () => {
     <div className="flex flex-col items-center justify-center ">
       <ToastContainer/>
       <h1 className="text-4xl font-bold text-center uppercase mt-9">Contact Me</h1>
-      <div className="grid grid-cols-2 gap-10 items-center mt-7">
-        <section className="w-full max-w-[500px]">
-          <form onSubmit={handleSubmit} className="flex justify-start flex-col items-start ml-6">
+      <div className="flex justify-center flex-col items-center">
+        <section className=" mt-4 ">
+          <form onSubmit={handleSubmit} className="flex justify-center flex-col items-start ">
             <input
               type="text"
               name="name"
               placeholder="name"
               value={formData.name}
               onChange={handleChange}
-              className="h-[40px] w-[90%] p-2 border bg-secondary rounded text-primary font-extralight "
+              className="min-w-[450px] md:w-[450px] lg:w-[600px] p-2 border bg-secondary rounded text-primary font-extralight mt-3 "
             />
             <input
               type="email"
@@ -68,57 +64,23 @@ const ContactForm = () => {
               placeholder="your email"
               value={formData.email}
               onChange={handleChange}
-              className="h-[40px] w-[90%] p-2 border bg-secondary rounded text-primary font-extralight "
+              className="min-w-[450px] md:w-[450px] lg:w-[600px] p-2 border bg-secondary rounded text-primary font-extralight mt-3"
             />
             <textarea
               name="message"
               placeholder="Let's communicate for cooperation and development"
               onChange={handleChange}
-              className="h-[100px] w-[250px] min-w-full p-2 border bg-secondary rounded text-primary resize-none font-extralight"
+              className="min-w-[450px] md:w-[450px] lg:w-[600px] h-[100px] md:min-h-[200px] lg:min-h-[200px] max-h-[250px] overflow-auto p-2 border bg-secondary rounded text-primary resize-none font-extralight mt-3"
             />
             <button
             
               type="submit"
-              className="px-4 py-2 border text-secondary rounded transition mt-4 mb-3 p-2"
+              className="px-4 py-2 border text-secondary rounded transition mt-3 mb-3"
             >
               SEND
             </button>
           </form>
-        </section>
-        <section className="flex flex-col justify-center items-center relative mt-8">
-          <div className="relative flex justify-center items-center">
-            <WhiteCheck className=" mt-[-170px] w-20 absolute" />
-            <PolygonLogo className="w-50 mt-[-20px] relative " />
-          </div>
-
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center mt-4">
-            <h3 className="text-lg text-center font-semibold">Find me on</h3>
-            <div className="flex flex-row gap-3 ">
-              <a
-                href="https://github.com/handebayuek"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GithubLogo className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/hande-bayuk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LinkedInLogo className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.figma.com/@handee"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                <FigmaLogo className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-        </section>
+          </section>
       </div>
     </div>
   );
